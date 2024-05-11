@@ -1,0 +1,1 @@
+chromium --enable-unsafe-webgpu --enable-features=Vulkan

@@ -1,0 +1,207 @@
+(
+    brightness: High,
+    current_mode: Static,
+    builtins: {
+        Static: (
+            mode: Static,
+            zone: None,
+            colour1: (
+                r: 255,
+                g: 255,
+                b: 255,
+            ),
+            colour2: (
+                r: 0,
+                g: 0,
+                b: 0,
+            ),
+            speed: Med,
+            direction: Right,
+        ),
+        Breathe: (
+            mode: Breathe,
+            zone: None,
+            colour1: (
+                r: 166,
+                g: 0,
+                b: 0,
+            ),
+            colour2: (
+                r: 0,
+                g: 0,
+                b: 0,
+            ),
+            speed: Med,
+            direction: Right,
+        ),
+        Strobe: (
+            mode: Strobe,
+            zone: None,
+            colour1: (
+                r: 166,
+                g: 0,
+                b: 0,
+            ),
+            colour2: (
+                r: 0,
+                g: 0,
+                b: 0,
+            ),
+            speed: Med,
+            direction: Right,
+        ),
+        Rainbow: (
+            mode: Rainbow,
+            zone: None,
+            colour1: (
+                r: 166,
+                g: 0,
+                b: 0,
+            ),
+            colour2: (
+                r: 0,
+                g: 0,
+                b: 0,
+            ),
+            speed: Med,
+            direction: Right,
+        ),
+        Star: (
+            mode: Star,
+            zone: None,
+            colour1: (
+                r: 166,
+                g: 0,
+                b: 0,
+            ),
+            colour2: (
+                r: 0,
+                g: 0,
+                b: 0,
+            ),
+            speed: Med,
+            direction: Right,
+        ),
+        Rain: (
+            mode: Rain,
+            zone: None,
+            colour1: (
+                r: 166,
+                g: 0,
+                b: 0,
+            ),
+            colour2: (
+                r: 0,
+                g: 0,
+                b: 0,
+            ),
+            speed: Med,
+            direction: Right,
+        ),
+        Highlight: (
+            mode: Highlight,
+            zone: None,
+            colour1: (
+                r: 166,
+                g: 0,
+                b: 0,
+            ),
+            colour2: (
+                r: 0,
+                g: 0,
+                b: 0,
+            ),
+            speed: Med,
+            direction: Right,
+        ),
+        Laser: (
+            mode: Laser,
+            zone: None,
+            colour1: (
+                r: 166,
+                g: 0,
+                b: 0,
+            ),
+            colour2: (
+                r: 0,
+                g: 0,
+                b: 0,
+            ),
+            speed: Med,
+            direction: Right,
+        ),
+        Ripple: (
+            mode: Ripple,
+            zone: None,
+            colour1: (
+                r: 166,
+                g: 0,
+                b: 0,
+            ),
+            colour2: (
+                r: 0,
+                g: 0,
+                b: 0,
+            ),
+            speed: Med,
+            direction: Right,
+        ),
+        Pulse: (
+            mode: Pulse,
+            zone: None,
+            colour1: (
+                r: 166,
+                g: 0,
+                b: 0,
+            ),
+            colour2: (
+                r: 0,
+                g: 0,
+                b: 0,
+            ),
+            speed: Med,
+            direction: Right,
+        ),
+        Comet: (
+            mode: Comet,
+            zone: None,
+            colour1: (
+                r: 166,
+                g: 0,
+                b: 0,
+            ),
+            colour2: (
+                r: 0,
+                g: 0,
+                b: 0,
+            ),
+            speed: Med,
+            direction: Right,
+        ),
+        Flash: (
+            mode: Flash,
+            zone: None,
+            colour1: (
+                r: 166,
+                g: 0,
+                b: 0,
+            ),
+            colour2: (
+                r: 0,
+                g: 0,
+                b: 0,
+            ),
+            speed: Med,
+            direction: Right,
+        ),
+    },
+    multizone: None,
+    multizone_on: false,
+    enabled: AuraDevRog1([
+        Keyboard,
+        Boot,
+        Lightbar,
+        Awake,
+        Sleep,
+    ]),
+)
