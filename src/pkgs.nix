@@ -15,14 +15,15 @@ pkgs: inputs: with pkgs;
   chromium
   google-chrome
 
-  (vscode-with-extensions.override {
+  (unstable.vscode-with-extensions.override {
     vscodeExtensions = with vscode-extensions; [
       jnoortheen.nix-ide
       ms-python.python
       ms-python.vscode-pylance
-      rust-lang.rust-analyzer
+      rust-analyzer-nightly-vscode
     ];
   })
+  rust-analyzer-nightly
   rnix-lsp
 
   spotify

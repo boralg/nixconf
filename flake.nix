@@ -9,9 +9,10 @@
       url = "github:roc-lang/roc/main";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    fenix.url = "github:nix-community/fenix";
   };
 
-  outputs = { self, nixpkgs, nixpkgs-unstable, ... }@inputs:
+  outputs = { self, nixpkgs, nixpkgs-unstable, fenix, ... }@inputs:
     let
       commonArgs = {
         system = "x86_64-linux";
@@ -39,6 +40,8 @@
             nixpkgs.overlays = [
               (final: prev: {
                 unstable = unstablePkgs;
+                rust-analyzer-nightly = fenix.packages.${commonArgs.system}.latest.rust-analyzer;
+                rust-analyzer-nightly-vscode = fenix.packages.${commonArgs.system}.rust-analyzer-vscode-extension;
               })
             ];
           }
