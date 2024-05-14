@@ -1,4 +1,5 @@
-pkgs: inputs: with pkgs; [
+pkgs: inputs: with pkgs;
+[
   nixos-option
 
   mesa-demos

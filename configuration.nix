@@ -52,16 +52,6 @@ in
     khelpcenter
   ];
 
-  nixpkgs.config = {
-    allowUnfree = true;
-    nvidia.acceptLicense = true;
-
-    permittedInsecurePackages = [
-      "electron-25.9.0"
-      "nix-2.15.3"
-    ];
-  };
-
   environment.systemPackages = [ shovel purr ] ++ bashpkgs ++ (import ./src/pkgs.nix pkgs inputs);
 
   services = import ./src/services.nix;

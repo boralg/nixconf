@@ -9,38 +9,34 @@ import uuid
 NIXCONF_HOME = os.environ.get("NIXCONF_HOME", "/home/yallo/nixconf")
 
 def get_pkgs():
-    with open(NIXCONF_HOME + "/pkgs.nix", 'r') as file:
+    with open(NIXCONF_HOME + "/src/pkgs.nix", 'r') as file:
         lines = file.readlines()
 
-    lines = lines[1:-1]
+    return lines[0], lines[2:-1]
 
-    return [line.strip() for line in lines]
+def set_pkgs(header, packages):
+    content = [header, '['] + packages + [']']
 
-def set_pkgs(packages):
-    formatted_packages = [f'  {pkg}' if pkg else '' for pkg in packages]
-
-    content = ['pkgs: inputs: with pkgs; ['] + formatted_packages + [']']
-
-    with open(f"{NIXCONF_HOME}/pkgs.nix", 'w') as file:
+    with open(f"{NIXCONF_HOME}/src/pkgs.nix", 'w') as file:
         file.write('\n'.join(content))
 
 def add_packages_to_nix(packages):
-    existing_packages = get_pkgs()
+    header, existing_packages = get_pkgs()
 
     # Add the new packages, skipping the ones that are already there
     for package in packages:
-        if package not in existing_packages:
-            existing_packages.append(package)
+        if f'  {package}' not in existing_packages:
+            existing_packages.append(f'  {package}')
 
-    set_pkgs(existing_packages)
+    set_pkgs(header, existing_packages)
 
 def remove_packages_from_nix(packages):
-    existing_packages = get_pkgs()
+    header, existing_packages = get_pkgs()
 
     # Remove the specified packages
-    existing_packages = [package for package in existing_packages if package not in packages]
+    existing_packages = [package for package in existing_packages if f'  {package}' not in packages]
 
-    set_pkgs(existing_packages)
+    set_pkgs(header, existing_packages)
 
 def sync_nix_conf():
     backup_uuid = str(uuid.uuid4())
