@@ -21,7 +21,7 @@ pkgs: inputs: with pkgs;
       ms-python.python
       ms-python.vscode-pylance
       rust-analyzer-nightly-vscode
-      PolyMeilex.wgsl
+      wgsl-analyzer.wgsl-analyzer
     ];
   })
   rust-analyzer-nightly
