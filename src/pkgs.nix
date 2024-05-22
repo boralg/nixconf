@@ -17,11 +17,11 @@ pkgs: inputs: with pkgs;
 
   (unstable.vscode-with-extensions.override {
     vscodeExtensions = with vscode-extensions; [
-      jnoortheen.nix-ide
-      ms-python.python
-      ms-python.vscode-pylance
+      vscode-marketplace.jnoortheen.nix-ide
+      vscode-marketplace.ms-python.python
+      vscode-marketplace.ms-python.vscode-pylance
       rust-analyzer-nightly-vscode
-      wgsl-analyzer.wgsl-analyzer
+      vscode-marketplace.wgsl-analyzer.wgsl-analyzer
     ];
   })
   rust-analyzer-nightly

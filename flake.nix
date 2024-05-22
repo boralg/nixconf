@@ -10,9 +10,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     fenix.url = "github:nix-community/fenix";
+    vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
   };
 
-  outputs = { self, nixpkgs, nixpkgs-unstable, fenix, ... }@inputs:
+  outputs = { self, nixpkgs, nixpkgs-unstable, fenix, vscode-extensions, ... }@inputs:
     let
       commonArgs = {
         system = "x86_64-linux";
@@ -42,6 +43,7 @@
                 unstable = unstablePkgs;
                 rust-analyzer-nightly = fenix.packages.${commonArgs.system}.latest.rust-analyzer;
                 rust-analyzer-nightly-vscode = fenix.packages.${commonArgs.system}.rust-analyzer-vscode-extension;
+                vscode-extensions = vscode-extensions.extensions.${commonArgs.system};
               })
             ];
           }
