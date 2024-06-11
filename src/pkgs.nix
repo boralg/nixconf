@@ -25,7 +25,7 @@ pkgs: inputs: with pkgs;
     ];
   })
   rust-analyzer-nightly
-  rnix-lsp
+  nil
 
   spotify
   obsidian
@@ -43,7 +43,6 @@ pkgs: inputs: with pkgs;
   gimp
   wl-clipboard
   discord
-  pinentry-curses
   qbittorrent
   obs-studio
   file

@@ -1,16 +1,14 @@
 {
   xserver = {
     enable = true;
-    displayManager.sddm.enable = true;
-    displayManager.sddm.wayland.enable = true;
-    
-    displayManager.defaultSession = "plasma";
     desktopManager.plasma5.enable = true;
-
-    libinput.enable = true;
-
     videoDrivers = [ "nvidia" ];
   };
+
+  displayManager.sddm.enable = true;
+  displayManager.sddm.wayland.enable = true;
+  displayManager.defaultSession = "plasma";
+  libinput.enable = true;
 
   asusd = {
     enable = true;
