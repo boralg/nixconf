@@ -12,7 +12,8 @@
 
   asusd = {
     enable = true;
-    auraConfig = builtins.readFile ./aura.ron;
+    profileConfig = builtins.readFile ./asusd/profile.ron;
+    auraConfig = builtins.readFile ./asusd/aura.ron;
   };
 
   tor = {

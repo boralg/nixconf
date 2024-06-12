@@ -1,4 +1,5 @@
 (
+    config_name: "aura_1866.ron",
     brightness: High,
     current_mode: Static,
     builtins: {
@@ -195,13 +196,16 @@
             direction: Right,
         ),
     },
-    multizone: None,
     multizone_on: false,
-    enabled: AuraDevRog1([
-        Keyboard,
-        Boot,
-        Lightbar,
-        Awake,
-        Sleep,
-    ]),
+    enabled: (
+        states: [
+            (
+                zone: Keyboard,
+                boot: true,
+                awake: true,
+                sleep: true,
+                shutdown: true,
+            ),
+        ],
+    ),
 )
