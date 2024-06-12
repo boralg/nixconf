@@ -26,6 +26,7 @@ pkgs: inputs: with pkgs;
   })
   rust-analyzer-nightly
   nil
+  nixpkgs-fmt
 
   spotify
   obsidian
