@@ -44,7 +44,7 @@ pkgs: inputs: with pkgs;
   ffmpeg
   gimp
   wl-clipboard
-  discord
+  webcord
   qbittorrent
   obs-studio
   file
