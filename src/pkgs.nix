@@ -16,12 +16,13 @@ pkgs: inputs: with pkgs;
   google-chrome
 
   (unstable.vscode-with-extensions.override {
-    vscodeExtensions = with vscode-extensions; [
-      vscode-marketplace.jnoortheen.nix-ide
-      vscode-marketplace.ms-python.python
-      vscode-marketplace.ms-python.vscode-pylance
+    vscodeExtensions = with vscode-extensions.vscode-marketplace; [
+      jnoortheen.nix-ide
+      ms-python.python
+      ms-python.vscode-pylance
       rust-analyzer-nightly-vscode
-      vscode-marketplace.wgsl-analyzer.wgsl-analyzer
+      wgsl-analyzer.wgsl-analyzer
+      wholroyd.jinja
     ];
   })
   rust-analyzer-nightly
