@@ -1,0 +1,1 @@
+asusctl led-mode static -c ffffff
