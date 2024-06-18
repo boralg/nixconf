@@ -6,7 +6,6 @@ pkgs: inputs: with pkgs;
   asusctl
 
   vim
-  kate
   wget
 
   firefox
@@ -37,9 +36,9 @@ pkgs: inputs: with pkgs;
   git
   git-lfs
 
-  kolourpaint
+  kdePackages.kdenlive
+  kdePackages.kolourpaint
   vlc
-  kdenlive
   caffeine-ng
   ffmpeg
   gimp

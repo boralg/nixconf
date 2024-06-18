@@ -1,13 +1,15 @@
 {
   xserver = {
     enable = true;
-    desktopManager.plasma5.enable = true;
     videoDrivers = [ "nvidia" ];
   };
+
+  desktopManager.plasma6.enable = true;
 
   displayManager.sddm.enable = true;
   displayManager.sddm.wayland.enable = true;
   displayManager.defaultSession = "plasma";
+
   libinput.enable = true;
 
   asusd = {
@@ -21,11 +23,6 @@
     client.enable = true;
   };
 
-  openssh = {
-    enable = true;
-  };
-
-  pcscd = {
-    enable = true;
-  };
+  openssh.enable = true;
+  pcscd.enable = true;
 }
