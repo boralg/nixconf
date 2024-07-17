@@ -12,10 +12,15 @@ in
     ./hardware-configuration.nix
   ];
 
-  boot.loader = {
-    systemd-boot.enable = true;
-    efi.canTouchEfiVariables = true;
+  
+  boot = {
+    loader = {
+      systemd-boot.enable = true;
+      efi.canTouchEfiVariables = true;
+    };
+    kernelParams = [ "apm=power_off" "acpi=force" "reboot=acpi" ];
   };
+
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
