@@ -41,8 +41,8 @@
             nixpkgs.overlays = [
               (final: prev: {
                 unstable = unstablePkgs;
-                rust-analyzer-nightly = fenix.packages.${commonArgs.system}.latest.rust-analyzer;
-                rust-analyzer-nightly-vscode = fenix.packages.${commonArgs.system}.rust-analyzer-vscode-extension;
+                rust-analyzer = fenix.packages.${commonArgs.system}.stable.rust-analyzer;
+                rust-analyzer-vscode = fenix.packages.${commonArgs.system}.rust-analyzer-vscode-extension;
                 vscode-extensions = vscode-extensions.extensions.${commonArgs.system};
               })
             ];

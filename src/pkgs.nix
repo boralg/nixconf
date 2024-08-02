@@ -19,12 +19,12 @@ pkgs: inputs: with pkgs;
       jnoortheen.nix-ide
       ms-python.python
       ms-python.vscode-pylance
-      rust-analyzer-nightly-vscode
+      rust-analyzer-vscode
       wgsl-analyzer.wgsl-analyzer
       wholroyd.jinja
     ];
   })
-  rust-analyzer-nightly
+  rust-analyzer
   nil
   nixpkgs-fmt
 
