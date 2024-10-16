@@ -31,6 +31,9 @@ pkgs: inputs: with pkgs;
   spotify
   obsidian
   jetbrains.idea-community
+  android-studio
+
+  jdk17
 
   tree
   git
