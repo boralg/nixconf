@@ -1,19 +1,22 @@
-config: {
-  package = config.boot.kernelPackages.nvidiaPackages.latest;
+{ config, ... }:
+{
+  config.hardware.nvidia = {
+    package = config.boot.kernelPackages.nvidiaPackages.latest;
 
-  powerManagement.enable = false;
-  powerManagement.finegrained = false;
+    powerManagement.enable = false;
+    powerManagement.finegrained = false;
 
-  modesetting.enable = true;
-  open = false;
-  nvidiaSettings = true;
+    modesetting.enable = true;
+    open = false;
+    nvidiaSettings = true;
 
-  prime = {
-    offload = {
-      enable = true;
-      enableOffloadCmd = true;
+    prime = {
+      offload = {
+        enable = true;
+        enableOffloadCmd = true;
+      };
+      intelBusId = "PCI:0:2:0";
+      nvidiaBusId = "PCI:1:0:0";
     };
-    intelBusId = "PCI:0:2:0";
-    nvidiaBusId = "PCI:1:0:0";
   };
 }

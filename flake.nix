@@ -33,7 +33,7 @@
       nixosConfigurations.onix = nixpkgs.lib.nixosSystem {
         inherit pkgs;
         specialArgs = {
-          inputs = inputs;
+          inherit inputs;
         };
         modules = [
           ./configuration.nix

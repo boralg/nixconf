@@ -1,18 +1,12 @@
 { config, pkgs, lib, inputs, ... }:
-let
-  bashpkgs = import ./src/bashpkgs.nix {
-    inherit pkgs lib;
-    path = ./src/bashpkgs;
-  };
-  shovel = import ./src/pypkgs/shovel/default.nix { inherit pkgs; };
-  purr = import ./src/pypkgs/purr/default.nix { inherit pkgs; };
-in
 {
   imports = [
     ./hardware-configuration.nix
+    ./src/pkgs.nix
+    ./src/services.nix
+    ./src/nvidia.nix
   ];
 
-  
   boot = {
     loader = {
       systemd-boot.enable = true;
@@ -57,10 +51,6 @@ in
     khelpcenter
   ];
 
-  environment.systemPackages = [ shovel purr ] ++ bashpkgs ++ (import ./src/pkgs.nix pkgs inputs);
-
-  services = import ./src/services.nix;
-
   programs.gnupg.agent = {
     enable = true;
     pinentryPackage = pkgs.pinentry-curses;
@@ -77,8 +67,6 @@ in
     enable = true;
     driSupport = true;
   };
-
-  hardware.nvidia = import ./src/nvidia.nix config;
 
   system.autoUpgrade.enable = true;
   system.autoUpgrade.allowReboot = true;
