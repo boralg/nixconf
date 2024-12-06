@@ -2,7 +2,7 @@
   description = "onix's system configuration";
 
   inputs = {
-    nixpkgs.url = "nixpkgs/nixos-24.05";
+    nixpkgs.url = "nixpkgs/nixos-24.11";
     nixpkgs-unstable.url = "nixpkgs/nixos-unstable";
 
     roc = {

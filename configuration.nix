@@ -31,11 +31,6 @@
     keyMap = "us";
   };
 
-  sound.enable = true;
-  hardware.pulseaudio = {
-    enable = true;
-  };
-
   hardware.bluetooth.enable = true;
   hardware.bluetooth.powerOnBoot = true;
 
@@ -63,11 +58,11 @@
     dedicatedServer.openFirewall = true;
   };
 
-  hardware.opengl = {
-    enable = true;
-    driSupport = true;
-  };
+  programs.direnv.enable = true;
 
+  hardware.graphics.enable = true;
+
+  security.rtkit.enable = true;
   system.autoUpgrade.enable = true;
   system.autoUpgrade.allowReboot = true;
 

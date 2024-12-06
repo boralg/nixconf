@@ -5,6 +5,13 @@
       videoDrivers = [ "nvidia" ];
     };
 
+    pipewire = {
+      enable = true;
+      alsa.enable = true;
+      alsa.support32Bit = true;
+      pulse.enable = true;
+    };
+
     desktopManager.plasma6.enable = true;
 
     displayManager.sddm.enable = true;
