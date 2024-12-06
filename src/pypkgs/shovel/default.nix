@@ -17,7 +17,7 @@ pkgs.python39Packages.buildPythonApplication rec {
   doCheck = false;
 
   meta = with pkgs.lib; {
-    description = "A script to manage a NixOS configuration structured in Shovel-style";
+    description = "A script to manage a NixOS configuration outside /etc/nixos";
     homepage = "https://nowhere.com";
     license = licenses.mit;
     maintainers = [ maintainers.yallo ];

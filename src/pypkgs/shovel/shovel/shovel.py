@@ -6,8 +6,7 @@ from pathlib import Path
 import sys
 import uuid
 
-NIXCONF_HOME = os.environ.get("NIXCONF_HOME", "/home/yallo/nixconf")
-
+NIXCONF_HOME = os.environ.get("NIXCONF_HOME", os.getcwd())
 
 def sync_nix_conf():
     backup_uuid = str(uuid.uuid4())
@@ -30,23 +29,13 @@ def rollback_nix_conf(backup_uuid):
     else:
         raise ValueError(f"No backup found for the given UUID: {backup_uuid}")
 
-def preprocess_args(args):
-    """Preprocess arguments to handle -s combined with other options"""
-    new_args = []
-    sync = False
-    for arg in args:
-        if arg.startswith('-') and 's' in arg and len(arg) > 2:  # If -s is combined with other option(s)
-            new_args.append(arg.replace('s', ''))  # Remove s from the combined option(s)
-            sync = True  # Mark that we have a sync option
-        else:
-            new_args.append(arg)
-    if sync:
-        new_args.append('-s')  # Append -s as a separate option at the end
-    return new_args
-
 def main():
+    if not (Path(NIXCONF_HOME) / 'configuration.nix').exists():
+        print(f"Error: 'configuration.nix' not found in NIXCONF_HOME: {NIXCONF_HOME}", file=sys.stderr)
+        sys.exit(1)
+
     parser = argparse.ArgumentParser(prog='shovel', 
-        description='Shovel, a script to manage a NixOS configuration structured in Shovel-style')
+        description='Shovel, a script to manage a NixOS configuration outside /etc/nixos')
 
     group = parser.add_mutually_exclusive_group()
     group.add_argument(
@@ -68,3 +57,6 @@ def main():
         rollback_nix_conf(args.rollback)
     else:
         parser.print_help()
+
+if __name__ == '__main__':
+    main()
