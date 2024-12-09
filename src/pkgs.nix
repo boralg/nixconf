@@ -52,7 +52,6 @@ in
       kdePackages.kdenlive
       kdePackages.kolourpaint
       vlc
-      caffeine-ng
       ffmpeg
       gimp
       wl-clipboard
