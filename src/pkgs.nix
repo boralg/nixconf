@@ -32,6 +32,8 @@ in
           rust-analyzer-vscode
           wgsl-analyzer.wgsl-analyzer
           wholroyd.jinja
+
+          mkhl.direnv
         ];
       })
       rust-analyzer
