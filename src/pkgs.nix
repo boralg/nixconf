@@ -39,7 +39,7 @@ in
       })
       rust-analyzer
       nil
-      nixpkgs-fmt
+      nixfmt-rfc-style
 
       spotify
       obsidian
