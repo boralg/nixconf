@@ -34,6 +34,7 @@ in
           wholroyd.jinja
 
           mkhl.direnv
+          editorconfig.editorconfig
         ];
       })
       rust-analyzer
