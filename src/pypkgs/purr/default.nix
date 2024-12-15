@@ -1,4 +1,6 @@
-{ pkgs ? import <nixpkgs> {} }:
+{
+  pkgs ? import <nixpkgs> { },
+}:
 
 pkgs.python39Packages.buildPythonApplication rec {
   pname = "purr";
@@ -20,7 +22,7 @@ pkgs.python39Packages.buildPythonApplication rec {
 
   meta = with pkgs.lib; {
     description = "A simple password manager backed by a human-readable YAML store";
-    homepage = "https://nowhere.com"; 
+    homepage = "https://nowhere.com";
     license = licenses.mit;
     maintainers = [ maintainers.yallo ];
   };

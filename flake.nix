@@ -13,7 +13,15 @@
     vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
   };
 
-  outputs = { self, nixpkgs, nixpkgs-unstable, fenix, vscode-extensions, ... }@inputs:
+  outputs =
+    {
+      self,
+      nixpkgs,
+      nixpkgs-unstable,
+      fenix,
+      vscode-extensions,
+      ...
+    }@inputs:
     let
       commonArgs = {
         system = "x86_64-linux";

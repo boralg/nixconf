@@ -7,7 +7,13 @@
     disko.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = { self, nixpkgs, disko, ... }@inputs:
+  outputs =
+    {
+      self,
+      nixpkgs,
+      disko,
+      ...
+    }@inputs:
     {
       nixosConfigurations = {
         install = nixpkgs.lib.nixosSystem ({
@@ -43,7 +49,10 @@
                             type = "btrfs";
                             extraArgs = [ "-f" ]; # Override existing partition
                             mountpoint = "/";
-                            mountOptions = [ "compress=zstd" "noatime" ];
+                            mountOptions = [
+                              "compress=zstd"
+                              "noatime"
+                            ];
                           };
                         };
                       };

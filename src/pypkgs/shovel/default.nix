@@ -1,4 +1,6 @@
-{ pkgs ? import <nixpkgs> { } }:
+{
+  pkgs ? import <nixpkgs> { },
+}:
 
 pkgs.python39Packages.buildPythonApplication rec {
   pname = "shovel";
@@ -6,8 +8,10 @@ pkgs.python39Packages.buildPythonApplication rec {
 
   src = ./.;
 
-  propagatedBuildInputs = with pkgs.python39Packages; [
-  ];
+  propagatedBuildInputs =
+    with pkgs.python39Packages;
+    [
+    ];
 
   # If tests are available, enable this
   # checkPhase = ''

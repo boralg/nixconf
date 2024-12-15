@@ -8,8 +8,13 @@ let
   purr = import ./pypkgs/purr/default.nix { inherit pkgs; };
 in
 {
-  config.environment.systemPackages = [ shovel purr ] ++ bashpkgs ++ (with pkgs;
+  config.environment.systemPackages =
     [
+      shovel
+      purr
+    ]
+    ++ bashpkgs
+    ++ (with pkgs; [
       nixos-option
 
       mesa-demos
