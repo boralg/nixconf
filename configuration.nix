@@ -1,10 +1,17 @@
-{ config, pkgs, lib, inputs, ... }:
+{
+  config,
+  pkgs,
+  lib,
+  inputs,
+  ...
+}:
 {
   imports = [
     ./hardware-configuration.nix
     ./src/pkgs.nix
     ./src/services.nix
     ./src/nvidia.nix
+    ./src/systemd.nix
   ];
 
   boot = {
@@ -12,11 +19,17 @@
       systemd-boot.enable = true;
       efi.canTouchEfiVariables = true;
     };
-    kernelParams = [ "apm=power_off" "acpi=force" "reboot=acpi" ];
+    kernelParams = [
+      "apm=power_off"
+      "acpi=force"
+      "reboot=acpi"
+    ];
   };
 
-
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
 
   networking = {
     hostName = "onix";
