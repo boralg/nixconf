@@ -4,13 +4,11 @@ let
     inherit pkgs lib;
     path = ./bashpkgs;
   };
-  shovel = import ./pypkgs/shovel/default.nix { inherit pkgs; };
   purr = import ./pypkgs/purr/default.nix { inherit pkgs; };
 in
 {
   config.environment.systemPackages =
     [
-      shovel
       purr
     ]
     ++ bashpkgs
