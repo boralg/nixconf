@@ -53,6 +53,12 @@
     packages = [ ];
   };
 
+  environment.etc = {
+    "nixos" = {
+      source = "/home/yallo/nixconf";
+    };
+  };
+
   environment.plasma6.excludePackages = with pkgs.kdePackages; [
     elisa
     okular
