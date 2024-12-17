@@ -54,7 +54,7 @@
   };
 
   environment.etc = {
-    "nixos" = {
+    nixos = {
       source = "/home/yallo/nixconf";
     };
   };
