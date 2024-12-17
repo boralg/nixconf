@@ -1,1 +1,1 @@
-asusctl led-mode static -c ffffff
+/run/current-system/sw/bin/asusctl led-mode static -c ffffff
