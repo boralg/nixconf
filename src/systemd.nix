@@ -7,7 +7,6 @@
       serviceConfig = {
         Type = "oneshot";
         ExecStart = "/run/current-system/sw/bin/asusctl-white-keys";
-        User = "root";
       };
     };
   };
