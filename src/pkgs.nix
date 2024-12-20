@@ -66,5 +66,7 @@ in
       obs-studio
       file
       aseprite
+
+      foliate
     ]);
 }
