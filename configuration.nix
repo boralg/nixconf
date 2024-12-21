@@ -12,6 +12,7 @@
     ./src/services.nix
     ./src/nvidia.nix
     ./src/systemd.nix
+    ./src/foliate.nix
   ];
 
   boot = {
