@@ -1,10 +1,11 @@
 { pkgs, ... }:
-let
-  secret = import ./yallo.secret.nix;
-in
 {
   home.username = "yallo";
   home.homeDirectory = "/home/yallo";
+
+  modules = [
+    ./home/rofi.nix
+  ];
 
   home.stateVersion = "23.05";
 

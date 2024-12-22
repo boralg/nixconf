@@ -67,7 +67,7 @@
     users.yallo =
       { ... }:
       {
-        imports = [ ./src/users/yallo.nix ];
+        imports = [ ./src/home/yallo.nix ];
       };
   };
 
