@@ -17,7 +17,6 @@ in
 
       mesa-demos
       asusctl
-      rofi
 
       vim
       wget
