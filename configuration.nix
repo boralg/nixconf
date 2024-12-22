@@ -60,6 +60,17 @@
     };
   };
 
+  home-manager = {
+    useGlobalPkgs = true;
+    useUserPackages = true;
+
+    users.yallo =
+      { ... }:
+      {
+        imports = [ ./src/users/yallo.nix ];
+      };
+  };
+
   environment.plasma6.excludePackages = with pkgs.kdePackages; [
     elisa
     okular

@@ -5,6 +5,11 @@
     nixpkgs.url = "nixpkgs/nixos-24.11";
     nixpkgs-unstable.url = "nixpkgs/nixos-unstable";
 
+    home-manager = {
+      url = "github:nix-community/home-manager/release-24.11";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     roc = {
       url = "github:roc-lang/roc/main";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -18,6 +23,7 @@
       self,
       nixpkgs,
       nixpkgs-unstable,
+      home-manager,
       fenix,
       vscode-extensions,
       ...
@@ -30,7 +36,7 @@
           nvidia.acceptLicense = true;
           permittedInsecurePackages =
             [
-          ];
+            ];
         };
       };
       pkgs = import nixpkgs commonArgs;
@@ -44,6 +50,7 @@
         };
         modules = [
           ./configuration.nix
+          home-manager.nixosModules.home-manager
           {
             nixpkgs.overlays = [
               (final: prev: {
