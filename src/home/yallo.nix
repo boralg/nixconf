@@ -3,8 +3,8 @@
   home.username = "yallo";
   home.homeDirectory = "/home/yallo";
 
-  modules = [
-    ./home/rofi.nix
+  imports = [
+    ./rofi.nix
   ];
 
   home.stateVersion = "23.05";
