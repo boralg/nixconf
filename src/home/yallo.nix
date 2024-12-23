@@ -3,9 +3,9 @@
   home.username = "yallo";
   home.homeDirectory = "/home/yallo";
 
-  imports = [
-    ./rofi.nix
-  ];
+  imports =
+    [
+    ];
 
   home.stateVersion = "23.05";
 
