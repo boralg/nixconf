@@ -52,7 +52,6 @@ in
       jdk17
 
       tree
-      git
       git-lfs
 
       kdePackages.kdenlive
