@@ -12,12 +12,6 @@
       pulse.enable = true;
     };
 
-    desktopManager.plasma6.enable = true;
-
-    displayManager.sddm.enable = true;
-    displayManager.sddm.wayland.enable = true;
-    displayManager.defaultSession = "plasma";
-
     libinput.enable = true;
 
     asusd = {

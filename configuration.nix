@@ -8,6 +8,7 @@
 {
   imports = [
     ./hardware-configuration.nix
+    ./src/plasma.nix
     ./src/pkgs.nix
     ./src/services.nix
     ./src/nvidia.nix
@@ -71,11 +72,7 @@
       };
   };
 
-  environment.plasma6.excludePackages = with pkgs.kdePackages; [
-    elisa
-    okular
-    khelpcenter
-  ];
+  plasma.enable = true;
 
   programs.gnupg.agent = {
     enable = true;
