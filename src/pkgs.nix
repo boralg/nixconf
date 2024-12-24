@@ -38,6 +38,10 @@ in
 
           mkhl.direnv
           editorconfig.editorconfig
+
+          haskell.haskell
+          justusadam.language-haskell
+
         ];
       })
       rust-analyzer
