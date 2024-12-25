@@ -1,5 +1,5 @@
 {
-  description = "onix's system configuration";
+  description = "System configuration";
 
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-24.11";
@@ -19,49 +19,15 @@
   };
 
   outputs =
-    {
-      self,
+    inputs@{
       nixpkgs,
       nixpkgs-unstable,
       home-manager,
       fenix,
       vscode-extensions,
       ...
-    }@inputs:
-    let
-      commonArgs = {
-        system = "x86_64-linux";
-        config = {
-          allowUnfree = true;
-          nvidia.acceptLicense = true;
-          permittedInsecurePackages =
-            [
-            ];
-        };
-      };
-      pkgs = import nixpkgs commonArgs;
-      unstablePkgs = import nixpkgs-unstable commonArgs;
-    in
+    }:
     {
-      nixosConfigurations.onix = nixpkgs.lib.nixosSystem {
-        inherit pkgs;
-        specialArgs = {
-          inherit inputs;
-        };
-        modules = [
-          ./configuration.nix
-          home-manager.nixosModules.home-manager
-          {
-            nixpkgs.overlays = [
-              (final: prev: {
-                unstable = unstablePkgs;
-                rust-analyzer = fenix.packages.${commonArgs.system}.stable.rust-analyzer;
-                rust-analyzer-vscode = fenix.packages.${commonArgs.system}.rust-analyzer-vscode-extension;
-                vscode-extensions = vscode-extensions.extensions.${commonArgs.system};
-              })
-            ];
-          }
-        ];
-      };
+      nixosConfigurations = import ./hosts inputs;
     };
 }

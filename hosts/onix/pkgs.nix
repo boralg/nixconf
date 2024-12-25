@@ -1,17 +1,19 @@
 { pkgs, lib, ... }:
 let
-  bashpkgs = import ./bashpkgs.nix {
-    inherit pkgs lib;
-    path = ./bashpkgs;
-  };
-  purr = import ./pypkgs/purr/default.nix { inherit pkgs; };
+  bashpkgs = import ../../modules/programs/bashpkgs { inherit pkgs lib; };
+  purr = import ../../modules/programs/purr { inherit pkgs; };
 in
 {
   config.environment.systemPackages =
     [
       purr
     ]
-    ++ bashpkgs
+    ++ (with bashpkgs; [
+      asusctl-white-keys
+      chrome-gpu
+      nrs
+      nvidia-offload
+    ])
     ++ (with pkgs; [
       nixos-option
 

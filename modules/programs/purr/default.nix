@@ -2,7 +2,7 @@
   pkgs ? import <nixpkgs> { },
 }:
 
-pkgs.python39Packages.buildPythonApplication rec {
+pkgs.python39Packages.buildPythonApplication {
   pname = "purr";
   version = "0.2.0";
 

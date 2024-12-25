@@ -1,0 +1,54 @@
+inputs@{
+  nixpkgs,
+  nixpkgs-unstable,
+  home-manager,
+  fenix,
+  vscode-extensions,
+  ...
+}:
+let
+  commonArgs = {
+    system = "x86_64-linux";
+    config = {
+      allowUnfree = true;
+      nvidia.acceptLicense = true;
+      permittedInsecurePackages =
+        [
+        ];
+    };
+  };
+  pkgs = import nixpkgs commonArgs;
+  unstablePkgs = import nixpkgs-unstable commonArgs;
+
+  commonModules = [
+    ./configuration.nix
+    home-manager.nixosModules.home-manager
+    {
+      nixpkgs.overlays = [
+        (final: prev: {
+          unstable = unstablePkgs;
+        })
+      ];
+    }
+  ];
+in
+{
+  onix = nixpkgs.lib.nixosSystem {
+    inherit pkgs;
+    specialArgs = {
+      inherit inputs;
+    };
+    modules = commonModules ++ [
+      ./onix/configuration.nix
+      {
+        nixpkgs.overlays = [
+          (final: prev: {
+            rust-analyzer = fenix.packages.${commonArgs.system}.stable.rust-analyzer;
+            rust-analyzer-vscode = fenix.packages.${commonArgs.system}.rust-analyzer-vscode-extension;
+            vscode-extensions = vscode-extensions.extensions.${commonArgs.system};
+          })
+        ];
+      } # TODO: move this away
+    ];
+  };
+}

@@ -6,14 +6,9 @@
   ...
 }:
 {
-  imports = [
-    ./hardware-configuration.nix
-    ./src/plasma.nix
-    ./src/pkgs.nix
-    ./src/services.nix
-    ./src/nvidia.nix
-    ./src/systemd.nix
-    ./src/foliate.nix
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
   ];
 
   boot = {
@@ -21,21 +16,6 @@
       systemd-boot.enable = true;
       efi.canTouchEfiVariables = true;
     };
-    kernelParams = [
-      "apm=power_off"
-      "acpi=force"
-      "reboot=acpi"
-    ];
-  };
-
-  nix.settings.experimental-features = [
-    "nix-command"
-    "flakes"
-  ];
-
-  networking = {
-    hostName = "onix";
-    networkmanager.enable = true;
   };
 
   time.timeZone = "Europe/Bucharest";
@@ -44,15 +24,6 @@
   console = {
     font = "Lat2-Terminus16";
     keyMap = "us";
-  };
-
-  hardware.bluetooth.enable = true;
-  hardware.bluetooth.powerOnBoot = true;
-
-  users.users.yallo = {
-    isNormalUser = true;
-    extraGroups = [ "wheel" ];
-    packages = [ ];
   };
 
   environment.etc = {
@@ -64,15 +35,25 @@
   home-manager = {
     useGlobalPkgs = true;
     useUserPackages = true;
-
-    users.yallo =
-      { ... }:
-      {
-        imports = [ ./src/home/yallo.nix ];
-      };
   };
 
-  plasma.enable = true;
+  networking.networkmanager.enable = true;
+
+  services.xserver.enable = true;
+  hardware.graphics.enable = true;
+
+  services.pipewire = {
+    enable = true;
+    alsa.enable = true;
+    alsa.support32Bit = true;
+    pulse.enable = true;
+  };
+
+  services.libinput.enable = true;
+
+  security.rtkit.enable = true;
+  system.autoUpgrade.enable = true;
+  system.autoUpgrade.allowReboot = true;
 
   programs.gnupg.agent = {
     enable = true;
@@ -80,19 +61,8 @@
     enableSSHSupport = true;
   };
 
-  programs.steam = {
-    enable = true;
-    remotePlay.openFirewall = true;
-    dedicatedServer.openFirewall = true;
-  };
-
-  programs.direnv.enable = true;
-
-  hardware.graphics.enable = true;
-
-  security.rtkit.enable = true;
-  system.autoUpgrade.enable = true;
-  system.autoUpgrade.allowReboot = true;
+  services.openssh.enable = true;
+  services.pcscd.enable = true;
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
