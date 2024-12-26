@@ -2,6 +2,7 @@ inputs@{
   nixpkgs,
   nixpkgs-unstable,
   home-manager,
+  plasma-manager,
   fenix,
   vscode-extensions,
   ...
@@ -40,6 +41,7 @@ in
     };
     modules = commonModules ++ [
       ./onix/configuration.nix
+      { home-manager.sharedModules = [ plasma-manager.homeManagerModules.plasma-manager ]; }
       {
         nixpkgs.overlays = [
           (final: prev: {

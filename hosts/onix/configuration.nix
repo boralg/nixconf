@@ -1,7 +1,7 @@
 {
   imports = [
     ./hardware-configuration.nix
-    ../../modules/desktops/plasma.nix
+    ../../modules/desktops/plasma
     ./pkgs.nix
     ./nvidia.nix
     ../../modules/services/asusd

@@ -10,6 +10,12 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    plasma-manager = {
+      url = "github:nix-community/plasma-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.home-manager.follows = "home-manager";
+    };
+
     roc = {
       url = "github:roc-lang/roc/main";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -23,6 +29,7 @@
       nixpkgs,
       nixpkgs-unstable,
       home-manager,
+      plasma-manager,
       fenix,
       vscode-extensions,
       ...
