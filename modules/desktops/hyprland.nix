@@ -14,6 +14,7 @@ in
 
   config = lib.mkIf cfg.enable {
     programs.hyprland.enable = true;
+    services.displayManager.sddm.enable = true;
 
     environment.systemPackages = [
       pkgs.kitty
