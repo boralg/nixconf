@@ -17,7 +17,7 @@ in
     services.displayManager.sddm.enable = true;
 
     environment.systemPackages = with pkgs; [
-      kitty
+      alacritty
     ];
   };
 }
