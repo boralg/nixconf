@@ -16,8 +16,8 @@ in
     programs.hyprland.enable = true;
     services.displayManager.sddm.enable = true;
 
-    environment.systemPackages = [
-      pkgs.kitty
+    environment.systemPackages = with pkgs; [
+      kitty
     ];
   };
 }

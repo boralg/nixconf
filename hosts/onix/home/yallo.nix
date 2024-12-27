@@ -6,6 +6,7 @@
   imports =
     [
       ../../../modules/desktops/plasma/home.nix
+      ../../../modules/desktops/hyprland/home.nix
     ];
 
   home.stateVersion = "23.05";
