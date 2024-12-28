@@ -13,6 +13,7 @@ in
       chrome-gpu
       nrs
       nvidia-offload
+      home-manager-log
     ])
     ++ (with pkgs; [
       nixos-option

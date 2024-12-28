@@ -1,0 +1,1 @@
+journalctl -e --unit home-manager-$(whoami).service
