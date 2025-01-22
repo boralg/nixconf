@@ -18,6 +18,8 @@ in
 
     environment.systemPackages = with pkgs; [
       alacritty
+      dolphin
+      ark
     ];
   };
 }
