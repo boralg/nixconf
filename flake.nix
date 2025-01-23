@@ -22,6 +22,8 @@
     };
     fenix.url = "github:nix-community/fenix";
     vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
+
+    zen-browser.url = "github:MarceColl/zen-browser-flake";
   };
 
   outputs =
@@ -32,6 +34,7 @@
       plasma-manager,
       fenix,
       vscode-extensions,
+      zen-browser,
       ...
     }:
     {

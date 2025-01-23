@@ -29,6 +29,7 @@ in
       tor-browser-bundle-bin
       chromium
       google-chrome
+      zen-browser
 
       (unstable.vscode-with-extensions.override {
         vscodeExtensions = with vscode-extensions.vscode-marketplace; [
