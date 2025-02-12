@@ -2,7 +2,6 @@
   imports = [
     ./hardware-configuration.nix
     ../../modules/desktops/plasma
-    ../../modules/desktops/hyprland
     ./pkgs.nix
     ./nvidia.nix
     ../../modules/services/asusd
@@ -34,7 +33,6 @@
   hardware.bluetooth.powerOnBoot = true;
 
   plasma.enable = true;
-  hyprland.enable = false;
 
   programs.steam = {
     enable = true;
