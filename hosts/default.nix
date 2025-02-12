@@ -5,6 +5,7 @@ inputs@{
   plasma-manager,
   fenix,
   vscode-extensions,
+  zen-browser,
   ...
 }:
 let
@@ -47,6 +48,7 @@ in
             rust-analyzer = fenix.packages.${commonArgs.system}.stable.rust-analyzer;
             rust-analyzer-vscode = fenix.packages.${commonArgs.system}.rust-analyzer-vscode-extension;
             vscode-extensions = vscode-extensions.extensions.${commonArgs.system};
+            zen-browser = zen-browser.packages.${commonArgs.system}.default;
           })
         ];
       } # TODO: move this away
