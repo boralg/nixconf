@@ -20,8 +20,14 @@
       url = "github:roc-lang/roc/main";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    fenix.url = "github:nix-community/fenix";
-    vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
+    fenix = {
+      url = "github:nix-community/fenix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    vscode-extensions = {
+      url = "github:nix-community/nix-vscode-extensions";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
