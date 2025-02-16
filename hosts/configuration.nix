@@ -38,6 +38,7 @@
   };
 
   networking.networkmanager.enable = true;
+  networking.firewall.allowedTCPPorts = [ 8080 ];
 
   services.xserver.enable = true;
   hardware.graphics.enable = true;
