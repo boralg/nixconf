@@ -11,10 +11,6 @@
       "completion"
     ];
 
-    dirHashes = {
-      projs = "$HOME/Desktop/projs";
-    };
-
     oh-my-zsh = {
       enable = true;
       plugins = [
@@ -26,6 +22,10 @@
     history.size = 10000;
 
     shellAliases = {
+    };
+
+    dirHashes = {
+      projs = "$HOME/Desktop/projs";
     };
   };
 }
