@@ -44,7 +44,7 @@ in
         ];
       })
       rust-analyzer
-      nil
+      nixd
       nixfmt-rfc-style
 
       spotify
