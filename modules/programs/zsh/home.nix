@@ -1,3 +1,4 @@
+{ pkgs, ... }:
 {
   programs.zsh = {
     enable = true;
@@ -16,7 +17,7 @@
       plugins = [
         "git"
       ];
-      theme = "robbyrussell";
+      theme = "robbyrussell"; # TODO: powerlevel10k
     };
 
     history.size = 10000;
