@@ -1,6 +1,7 @@
 {
   imports = [
     ./hardware-configuration.nix
+    ../../modules/programs/zsh
     ../../modules/desktops/plasma
     ./pkgs.nix
     ./nvidia.nix
@@ -33,6 +34,7 @@
   hardware.bluetooth.powerOnBoot = true;
 
   plasma.enable = true;
+  zsh.enable = true;
 
   programs.steam = {
     enable = true;

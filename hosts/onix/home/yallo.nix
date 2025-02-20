@@ -5,6 +5,7 @@
 
   imports = [
     ../../../modules/desktops/plasma/home.nix
+    ../../../modules/programs/zsh/home.nix
   ];
 
   home.stateVersion = "23.05";
