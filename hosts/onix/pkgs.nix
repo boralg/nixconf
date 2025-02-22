@@ -21,7 +21,7 @@ in
       mesa-demos
       asusctl
 
-      vim
+      nvim
       wget
 
       firefox

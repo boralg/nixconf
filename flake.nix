@@ -29,6 +29,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    nvf = {
+      url = "github:notashelf/nvf";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     zen-browser = {
       url = "github:youwen5/zen-browser-flake";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -37,16 +42,26 @@
 
   outputs =
     inputs@{
+      self,
       nixpkgs,
       nixpkgs-unstable,
       home-manager,
       plasma-manager,
       fenix,
       vscode-extensions,
+      nvf,
       zen-browser,
       ...
     }:
     {
+      packages.x86_64-linux.neovim =
+        (nvf.lib.neovimConfiguration {
+          pkgs = nixpkgs.legacyPackages.x86_64-linux;
+          modules = [
+            ./modules/programs/neovim
+          ];
+        }).neovim;
+
       nixosConfigurations = import ./hosts inputs;
     };
 }
