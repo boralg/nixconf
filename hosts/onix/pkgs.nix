@@ -4,6 +4,11 @@ let
   purr = import ../../modules/programs/purr { inherit pkgs; };
 in
 {
+  config.fonts.packages = with pkgs; [
+    (nerdfonts.override { fonts = [ "CascadiaCode" ]; })
+    cascadia-code
+  ];
+
   config.environment.systemPackages =
     [
       purr

@@ -4,9 +4,8 @@
   home.homeDirectory = "/home/yallo";
 
   imports = [
-    ../../../modules/desktops/plasma/home.nix
+    ../../../modules/desktops/plasma/home
     ../../../modules/programs/zsh/home.nix
-    ../../../modules/programs/neovim/home.nix
   ];
 
   home.stateVersion = "23.05";
