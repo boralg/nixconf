@@ -15,9 +15,17 @@
       enableLSP = true;
       enableTreesitter = true;
 
-      nix.enable = true;
+      nix = {
+        enable = true;
+        lsp.server = "nixd";
+        format.enable = true;
+        format.type = "nixfmt";
+      };
       rust.enable = true;
     };
+
+    lsp.formatOnSave = true;
+
     keymaps = [
       {
         key = "<Up>";
