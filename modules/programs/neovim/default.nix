@@ -18,5 +18,31 @@
       nix.enable = true;
       rust.enable = true;
     };
+    keymaps = [
+      {
+        key = "<Up>";
+        mode = "n";
+        silent = true;
+        action = "<Nop>";
+      }
+      {
+        key = "<Down>";
+        mode = "n";
+        silent = true;
+        action = "<Nop>";
+      }
+      {
+        key = "<Left>";
+        mode = "n";
+        silent = true;
+        action = "<Nop>";
+      }
+      {
+        key = "<Right>";
+        mode = "n";
+        silent = true;
+        action = "<Nop>";
+      }
+    ];
   };
 }
