@@ -13,6 +13,9 @@
     telescope.enable = true;
     autocomplete.nvim-cmp.enable = true;
 
+    terminal.toggleterm.enable = true;
+    terminal.toggleterm.lazygit.enable = true;
+
     languages = {
       enableLSP = true;
       enableTreesitter = true;
