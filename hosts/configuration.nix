@@ -59,8 +59,10 @@
   programs.gnupg.agent = {
     enable = true;
     pinentryPackage = pkgs.pinentry-curses;
-    enableSSHSupport = true;
+    # enableSSHSupport = true;
   };
+
+  programs.ssh.startAgent = true;
 
   services.openssh.enable = true;
   services.pcscd.enable = true;
