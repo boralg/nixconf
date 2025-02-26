@@ -28,6 +28,7 @@ in
 
       nvim
       wget
+      lazygit
 
       firefox
       tor
