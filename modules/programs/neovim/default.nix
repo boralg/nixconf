@@ -27,6 +27,7 @@
         format.type = "nixfmt";
       };
       rust.enable = true;
+      ts.enable = true;
     };
 
     lsp.formatOnSave = true;
