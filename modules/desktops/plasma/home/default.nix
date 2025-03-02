@@ -47,7 +47,7 @@
       "kcminputrc"."Mouse"."X11LibInputXAccelProfileFlat" = true;
       "kcminputrc"."Mouse"."XLbInptPointerAcceleration" = "-0.2";
 
-      "kdeglobals"."General"."BrowserApplication" = "firefox.desktop";
+      "kdeglobals"."General"."BrowserApplication" = "librewolf.desktop";
       "kdeglobals"."KFileDialog Settings"."Allow Expansion" = false;
       "kdeglobals"."KFileDialog Settings"."Automatically select filename extension" = true;
       "kdeglobals"."KFileDialog Settings"."Breadcrumb Navigation" = true;

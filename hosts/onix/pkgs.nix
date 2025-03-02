@@ -30,7 +30,7 @@ in
       wget
       lazygit
 
-      firefox
+      librewolf
       tor
       tor-browser-bundle-bin
       chromium
