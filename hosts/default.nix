@@ -11,17 +11,26 @@ inputs@{
   ...
 }:
 let
+  pkgs = import nixpkgs commonArgs;
+  unstablePkgs = import nixpkgs-unstable commonArgs;
+
   commonArgs = {
     system = "x86_64-linux";
     config = {
-      allowUnfree = true;
+      allowUnfreePredicate =
+        pkg:
+        builtins.elem (pkgs.lib.getName pkg) [
+          "nvidia-x11"
+          "nvidia-settings"
+          "spotify"
+          "obsidian"
+          "android-studio-stable"
+        ];
       nvidia.acceptLicense = true;
       permittedInsecurePackages = [
       ];
     };
   };
-  pkgs = import nixpkgs commonArgs;
-  unstablePkgs = import nixpkgs-unstable commonArgs;
 
   commonModules = [
     ./configuration.nix
