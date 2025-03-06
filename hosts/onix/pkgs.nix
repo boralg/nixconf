@@ -19,6 +19,7 @@ in
       nrs
       nvidia-offload
       home-manager-log
+      code
     ])
     ++ (with pkgs; [
       nixos-option
