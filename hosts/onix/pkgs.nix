@@ -37,6 +37,7 @@ in
       # google-chrome
 
       (unstable.vscode-with-extensions.override {
+        vscode = unstable.vscodium;
         vscodeExtensions = with vscode-extensions.vscode-marketplace; [
           jnoortheen.nix-ide
           ms-python.python
