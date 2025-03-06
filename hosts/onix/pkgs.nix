@@ -34,7 +34,7 @@ in
       tor
       tor-browser-bundle-bin
       chromium
-      google-chrome
+      # google-chrome
 
       (unstable.vscode-with-extensions.override {
         vscodeExtensions = with vscode-extensions.vscode-marketplace; [
