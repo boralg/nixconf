@@ -1,0 +1,17 @@
+{
+    "window.titleBarStyle": "custom",
+    "editor.fontFamily": "'Cascadia Code', 'monospace', monospace",
+    "nix.enableLanguageServer": true,
+    "nix.serverPath": "nixd",
+    "nix.serverSettings": {
+        "nixd": {
+            "formatting": {
+                "command": [
+                    "nixfmt"
+                ]
+            }
+        }
+    },
+    "files.autoSave": "afterDelay",
+    "editor.formatOnSave": true
+}

@@ -36,20 +36,6 @@ in
       chromium
       # google-chrome
 
-      (unstable.vscode-with-extensions.override {
-        vscode = unstable.vscodium;
-        vscodeExtensions = with vscode-extensions.vscode-marketplace; [
-          jnoortheen.nix-ide
-          ms-python.python
-          ms-python.vscode-pylance
-          rust-analyzer-vscode
-          wgsl-analyzer.wgsl-analyzer
-          wholroyd.jinja
-
-          mkhl.direnv
-          editorconfig.editorconfig
-        ];
-      })
       rust-analyzer
       nixd
       nixfmt-rfc-style

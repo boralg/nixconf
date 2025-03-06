@@ -6,6 +6,7 @@
   imports = [
     ../../../modules/desktops/plasma/home
     ../../../modules/programs/zsh/home.nix
+    ../../../modules/programs/vscode/home.nix
   ];
 
   home.stateVersion = "23.05";
