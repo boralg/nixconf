@@ -72,7 +72,6 @@ in
       webcord
       obs-studio
       file
-      aseprite
 
       foliate
     ]);
