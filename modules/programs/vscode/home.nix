@@ -9,7 +9,7 @@
     enableExtensionUpdateCheck = false;
 
     userSettings = builtins.fromJSON (builtins.readFile ./settings.json) // {
-      "rust-analyzer.server.path" = pkgs.rust-analyzer;
+      "rust-analyzer.server.path" = "${pkgs.rust-analyzer}/bin/rust-analyzer";
     };
 
     extensions = with pkgs.vscode-extensions.vscode-marketplace; [
