@@ -27,6 +27,8 @@ in
       wget
       lazygit
 
+      qass
+
       librewolf
       tor
       tor-browser-bundle-bin

@@ -34,6 +34,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    qass = {
+      url = "github:boralg/qass";
+      inputs.nixpkgs.follows = "nixpkgs"; # TODO: fix dupes in lock
+    };
+
     zen-browser = {
       url = "github:youwen5/zen-browser-flake";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -50,6 +55,7 @@
       fenix,
       vscode-extensions,
       nvf,
+      qass,
       zen-browser,
       ...
     }:
