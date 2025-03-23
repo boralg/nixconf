@@ -1,7 +1,6 @@
 { pkgs, lib, ... }:
 let
   bashpkgs = import ../../modules/programs/bashpkgs { inherit pkgs lib; };
-  purr = import ../../modules/programs/purr { inherit pkgs; };
 in
 {
   config.fonts.packages = with pkgs; [
@@ -10,10 +9,7 @@ in
   ];
 
   config.environment.systemPackages =
-    [
-      purr
-    ]
-    ++ (with bashpkgs; [
+    (with bashpkgs; [
       asusctl-white-keys
       chrome-gpu
       nrs
