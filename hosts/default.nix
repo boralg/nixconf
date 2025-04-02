@@ -9,6 +9,7 @@ inputs@{
   nvf,
   qass,
   zen-browser,
+  claude-desktop,
   ...
 }:
 let
@@ -63,6 +64,7 @@ in
             nvim = self.packages.${pkgs.stdenv.system}.neovim;
             qass = qass.packages.${commonArgs.system}.default;
             zen-browser = zen-browser.packages.${commonArgs.system}.default;
+            claude-desktop = claude-desktop.packages.${commonArgs.system}.claude-desktop-with-fhs;
           })
         ];
       }
