@@ -15,7 +15,7 @@
     extensions = with pkgs.vscode-extensions.vscode-marketplace; [
       jnoortheen.nix-ide
       ms-python.python
-      ms-python.vscode-pylance
+      (ms-python.vscode-pylance.override { meta.license = [ ]; })
       rust-lang.rust-analyzer
       wgsl-analyzer.wgsl-analyzer
       wholroyd.jinja
