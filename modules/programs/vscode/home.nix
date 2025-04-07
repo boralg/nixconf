@@ -16,7 +16,7 @@
       jnoortheen.nix-ide
       ms-python.python
       ms-python.vscode-pylance
-      pkgs.rust-analyzer-vscode
+      rust-lang.rust-analyzer
       wgsl-analyzer.wgsl-analyzer
       wholroyd.jinja
 
