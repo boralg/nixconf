@@ -30,8 +30,6 @@ in
       qass
 
       librewolf
-      tor
-      tor-browser-bundle-bin
       chromium
       # google-chrome
 
