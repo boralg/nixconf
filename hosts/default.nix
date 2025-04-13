@@ -2,6 +2,7 @@ inputs@{
   self,
   nixpkgs,
   nixpkgs-unstable,
+  lix-module,
   home-manager,
   plasma-manager,
   fenix,
@@ -35,6 +36,7 @@ let
   };
 
   commonModules = [
+    lix-module.nixosModules.default
     ./configuration.nix
     home-manager.nixosModules.home-manager
     {
