@@ -13,5 +13,6 @@
         }
     },
     "files.autoSave": "afterDelay",
-    "editor.formatOnSave": true
+    "editor.formatOnSave": true,
+    "rust-analyzer.checkOnSave": false,
 }
