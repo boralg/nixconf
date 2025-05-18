@@ -33,8 +33,6 @@ in
       chromium
       # google-chrome
 
-      claude-desktop
-
       rust-analyzer
       nixd
       nixfmt-rfc-style

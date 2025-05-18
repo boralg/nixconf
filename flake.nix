@@ -48,11 +48,6 @@
       url = "github:omarcresp/zen-browser-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    claude-desktop = {
-      url = "github:k3d3/claude-desktop-linux-flake";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
 
   outputs =
@@ -68,7 +63,6 @@
       nvf,
       qass,
       zen-browser,
-      claude-desktop,
       ...
     }:
     {
