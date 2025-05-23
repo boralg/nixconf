@@ -14,5 +14,5 @@
     },
     "files.autoSave": "afterDelay",
     "editor.formatOnSave": true,
-    "rust-analyzer.checkOnSave": false,
+    "files.autoSaveDelay": 2500
 }
