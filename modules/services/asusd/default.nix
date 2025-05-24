@@ -1,7 +1,13 @@
 {
   services.asusd = {
     enable = true;
-    profileConfig = builtins.readFile ./profile.ron;
-    auraConfig = builtins.readFile ./aura.ron;
+    profileConfig = {
+      text = builtins.readFile ./profile.ron;
+    };
+    auraConfigs = {
+      default = {
+        text = builtins.readFile ./aura.ron;
+      };
+    };
   };
 }
