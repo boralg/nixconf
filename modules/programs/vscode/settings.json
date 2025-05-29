@@ -13,6 +13,5 @@
         }
     },
     "files.autoSave": "afterDelay",
-    "editor.formatOnSave": true,
-    "files.autoSaveDelay": 2500
+    "editor.formatOnSave": true
 }
