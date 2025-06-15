@@ -20,6 +20,7 @@
         rust-lang.rust-analyzer
         wgsl-analyzer.wgsl-analyzer
         wholroyd.jinja
+        mtxr.sqltools
 
         mkhl.direnv
         editorconfig.editorconfig
