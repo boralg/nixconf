@@ -22,7 +22,7 @@ in
       mesa-demos
       asusctl
 
-      nvim
+      # nvim
       wget
       lazygit
 
