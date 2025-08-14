@@ -21,9 +21,12 @@
         wgsl-analyzer.wgsl-analyzer
         wholroyd.jinja
         mtxr.sqltools
+        bradlc.vscode-tailwindcss
 
         mkhl.direnv
         editorconfig.editorconfig
+
+        samplavigne.p5-vscode
       ];
     };
   };
