@@ -9,7 +9,6 @@ inputs@{
   vscode-extensions,
   nvf,
   qass,
-  zen-browser,
   ...
 }:
 let
@@ -64,7 +63,6 @@ in
             vscode-extensions = vscode-extensions.extensions.${commonArgs.system};
             # nvim = self.packages.${pkgs.stdenv.system}.neovim;
             qass = qass.packages.${commonArgs.system}.default;
-            zen-browser = zen-browser.packages.${commonArgs.system}.default;
           })
         ];
       }

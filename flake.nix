@@ -21,10 +21,6 @@
       inputs.home-manager.follows = "home-manager";
     };
 
-    roc = {
-      url = "github:roc-lang/roc/main";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     fenix = {
       url = "github:nix-community/fenix";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -43,11 +39,6 @@
       url = "github:boralg/qass";
       inputs.nixpkgs.follows = "nixpkgs"; # TODO: fix dupes in lock
     };
-
-    zen-browser = {
-      url = "github:omarcresp/zen-browser-flake";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
 
   outputs =
@@ -62,7 +53,6 @@
       vscode-extensions,
       nvf,
       qass,
-      zen-browser,
       ...
     }:
     {
