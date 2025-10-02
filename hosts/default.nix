@@ -8,6 +8,7 @@ inputs@{
   fenix,
   vscode-extensions,
   nvf,
+  glsld,
   qass,
   ...
 }:
@@ -54,7 +55,7 @@ in
     };
     modules = commonModules ++ [
       ./onix/configuration.nix
-      { home-manager.sharedModules = [ plasma-manager.homeManagerModules.plasma-manager ]; }
+      { home-manager.sharedModules = [ plasma-manager.homeModules.plasma-manager ]; }
       {
         nixpkgs.overlays = [
           (final: prev: {
@@ -63,6 +64,7 @@ in
             vscode-extensions = vscode-extensions.extensions.${commonArgs.system};
             # nvim = self.packages.${pkgs.stdenv.system}.neovim;
             qass = qass.packages.${commonArgs.system}.default;
+            glsld = glsld.packages.${commonArgs.system}.default;
           })
         ];
       }

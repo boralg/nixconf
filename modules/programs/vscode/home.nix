@@ -11,23 +11,36 @@
 
       userSettings = builtins.fromJSON (builtins.readFile ./settings.json) // {
         "rust-analyzer.server.path" = "${pkgs.rust-analyzer}/bin/rust-analyzer";
+        "glsld.binaryPath" = "${pkgs.glsld}/bin/glsld";
+        # "glsl-analyzer.path" = "${pkgs.glsl_analyzer}/bin/glsl_analyzer";
+        # "glsllint.glslangValidatorPath" = "${pkgs.glslang}/bin/glslangValidator";
       };
 
-      extensions = with pkgs.vscode-extensions.vscode-marketplace; [
-        jnoortheen.nix-ide
-        ms-python.python
-        (ms-python.vscode-pylance.override { meta.license = [ ]; })
-        rust-lang.rust-analyzer
-        wgsl-analyzer.wgsl-analyzer
-        wholroyd.jinja
-        mtxr.sqltools
-        bradlc.vscode-tailwindcss
+      extensions =
+        (with pkgs.vscode-extensions.vscode-marketplace; [
+          jnoortheen.nix-ide
+          ms-python.python
+          (ms-python.vscode-pylance.override { meta.license = [ ]; })
+          rust-lang.rust-analyzer
+          wgsl-analyzer.wgsl-analyzer
+          wholroyd.jinja
+          mtxr.sqltools
+          bradlc.vscode-tailwindcss
 
-        mkhl.direnv
-        editorconfig.editorconfig
+          # nolanderc.glsl-analyzer
 
-        samplavigne.p5-vscode
-      ];
+          # kuba-p.glsl-lsp
+
+          # dtoplak.vscode-glsllint
+          # slevesque.shader
+
+          # jsdf.glsl-lsp-jsdf
+
+          daiyousei-qz.glsld-vscode
+
+          mkhl.direnv
+          editorconfig.editorconfig
+        ]);
     };
   };
 }

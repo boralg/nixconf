@@ -35,6 +35,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    glsld = {
+      url = "github:boralg/glsld";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     qass = {
       url = "github:boralg/qass";
       inputs.nixpkgs.follows = "nixpkgs"; # TODO: fix dupes in lock
@@ -52,6 +57,7 @@
       fenix,
       vscode-extensions,
       nvf,
+      glsld,
       qass,
       ...
     }:
