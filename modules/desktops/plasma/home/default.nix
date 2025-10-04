@@ -3,6 +3,7 @@
     ./konsole.nix
   ];
 
+  # TODO: revise spectacle shortcuts + qass
   programs.plasma = {
     enable = true;
     shortcuts = {
