@@ -116,7 +116,7 @@
     },
     "flake-utils_2": {
       "inputs": {
-        "systems": "systems_2"
+        "systems": "systems_3"
       },
       "locked": {
         "lastModified": 1731533236,
@@ -183,27 +183,6 @@
         "type": "github"
       }
     },
-    "glsld": {
-      "inputs": {
-        "flake-utils": "flake-utils",
-        "nixpkgs": [
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1759434002,
-        "narHash": "sha256-a9BewtViUm44QoAM3zcsJr0j3vVeOCk/E+9Jlj8gOSg=",
-        "owner": "boralg",
-        "repo": "glsld",
-        "rev": "311b110f34c424bc1561c8b360bcb26c8ba8c0ea",
-        "type": "github"
-      },
-      "original": {
-        "owner": "boralg",
-        "repo": "glsld",
-        "type": "github"
-      }
-    },
     "home-manager": {
       "inputs": {
         "nixpkgs": [
@@ -241,7 +220,7 @@
     },
     "lix-module": {
       "inputs": {
-        "flake-utils": "flake-utils_2",
+        "flake-utils": "flake-utils",
         "flakey-profile": "flakey-profile",
         "lix": "lix",
         "nixpkgs": [
@@ -313,7 +292,7 @@
         "nixpkgs": [
           "nixpkgs"
         ],
-        "systems": "systems_3"
+        "systems": "systems_2"
       },
       "locked": {
         "lastModified": 1757397598,
@@ -376,7 +355,6 @@
     "root": {
       "inputs": {
         "fenix": "fenix",
-        "glsld": "glsld",
         "home-manager": "home-manager",
         "lix-module": "lix-module",
         "nixpkgs": "nixpkgs",
@@ -384,6 +362,7 @@
         "nvf": "nvf",
         "plasma-manager": "plasma-manager",
         "qass": "qass",
+        "shader-language-server": "shader-language-server",
         "vscode-extensions": "vscode-extensions"
       }
     },
@@ -418,6 +397,49 @@
         "owner": "rust-lang",
         "ref": "nightly",
         "repo": "rust-analyzer",
+        "type": "github"
+      }
+    },
+    "rust-overlay": {
+      "inputs": {
+        "nixpkgs": [
+          "shader-language-server",
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1759544920,
+        "narHash": "sha256-yQwP0JOHi3Icq09GG5ufGuGrq2zIijglVFj3kkF2MHA=",
+        "owner": "oxalica",
+        "repo": "rust-overlay",
+        "rev": "bd3a63bbff2c4cb3cd48e9d49f54c2ccad457f70",
+        "type": "github"
+      },
+      "original": {
+        "owner": "oxalica",
+        "repo": "rust-overlay",
+        "type": "github"
+      }
+    },
+    "shader-language-server": {
+      "inputs": {
+        "flake-utils": "flake-utils_3",
+        "nixpkgs": [
+          "nixpkgs"
+        ],
+        "rust-overlay": "rust-overlay"
+      },
+      "locked": {
+        "lastModified": 1759610231,
+        "narHash": "sha256-kkOFCEJTe9a+fdUcC8rjcLqdBnci7UumKGt1RNLBNIw=",
+        "owner": "boralg",
+        "repo": "shader-sense",
+        "rev": "b7029b293bc400f612fe5848611c915940d7b75f",
+        "type": "github"
+      },
+      "original": {
+        "owner": "boralg",
+        "repo": "shader-sense",
         "type": "github"
       }
     },
@@ -500,7 +522,7 @@
       "inputs": {
         "crane": "crane",
         "fenix": "fenix_2",
-        "flake-utils": "flake-utils_3",
+        "flake-utils": "flake-utils_2",
         "nixpkgs": [
           "qass",
           "nixpkgs"

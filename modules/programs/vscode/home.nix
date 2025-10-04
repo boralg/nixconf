@@ -11,13 +11,15 @@
 
       userSettings = builtins.fromJSON (builtins.readFile ./settings.json) // {
         "rust-analyzer.server.path" = "${pkgs.rust-analyzer}/bin/rust-analyzer";
-        "glsld.binaryPath" = "${pkgs.glsld}/bin/glsld";
+        "shader-validator.serverPath" = "${pkgs.shader-language-server}/bin/shader-language-server";
+        # "glsld.binaryPath" = "${pkgs.glsld}/bin/glsld";
         # "glsl-analyzer.path" = "${pkgs.glsl_analyzer}/bin/glsl_analyzer";
         # "glsllint.glslangValidatorPath" = "${pkgs.glslang}/bin/glslangValidator";
       };
 
-      extensions =
-        (with pkgs.vscode-extensions.vscode-marketplace; [
+      extensions = (
+        with pkgs.vscode-extensions.vscode-marketplace;
+        [
           jnoortheen.nix-ide
           ms-python.python
           (ms-python.vscode-pylance.override { meta.license = [ ]; })
@@ -36,11 +38,14 @@
 
           # jsdf.glsl-lsp-jsdf
 
-          daiyousei-qz.glsld-vscode
+          # daiyousei-qz.glsld-vscode
+
+          antaalt.shader-validator
 
           mkhl.direnv
           editorconfig.editorconfig
-        ]);
+        ]
+      );
     };
   };
 }

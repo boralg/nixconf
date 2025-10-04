@@ -8,7 +8,7 @@ inputs@{
   fenix,
   vscode-extensions,
   nvf,
-  glsld,
+  shader-language-server,
   qass,
   ...
 }:
@@ -64,7 +64,7 @@ in
             vscode-extensions = vscode-extensions.extensions.${commonArgs.system};
             # nvim = self.packages.${pkgs.stdenv.system}.neovim;
             qass = qass.packages.${commonArgs.system}.default;
-            glsld = glsld.packages.${commonArgs.system}.default;
+            shader-language-server = shader-language-server.packages.${commonArgs.system}.default;
           })
         ];
       }

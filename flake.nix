@@ -35,8 +35,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    glsld = {
-      url = "github:boralg/glsld";
+    shader-language-server = {
+      url = "github:boralg/shader-sense";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -57,7 +57,7 @@
       fenix,
       vscode-extensions,
       nvf,
-      glsld,
+      shader-language-server,
       qass,
       ...
     }:
