@@ -19,6 +19,7 @@ let
   commonArgs = {
     system = "x86_64-linux";
     config = {
+      # TODO: make this host specific
       allowUnfreePredicate =
         pkg:
         builtins.elem (pkgs.lib.getName pkg) [
@@ -37,11 +38,24 @@ let
   commonModules = [
     lix-module.nixosModules.default
     ./configuration.nix
-    home-manager.nixosModules.home-manager
     {
       nixpkgs.overlays = [
         (final: prev: {
           unstable = unstablePkgs;
+        })
+      ];
+    }
+    home-manager.nixosModules.home-manager
+    { home-manager.sharedModules = [ plasma-manager.homeModules.plasma-manager ]; }
+    {
+      nixpkgs.overlays = [
+        (final: prev: {
+          rust-analyzer = fenix.packages.${commonArgs.system}.stable.rust-analyzer;
+          rust-analyzer-vscode = fenix.packages.${commonArgs.system}.rust-analyzer-vscode-extension;
+          vscode-extensions = vscode-extensions.extensions.${commonArgs.system};
+          # nvim = self.packages.${pkgs.stdenv.system}.neovim;
+          qass = qass.packages.${commonArgs.system}.default;
+          shader-language-server = shader-language-server.packages.${commonArgs.system}.default;
         })
       ];
     }
@@ -55,20 +69,6 @@ in
     };
     modules = commonModules ++ [
       ./onix/configuration.nix
-      { home-manager.sharedModules = [ plasma-manager.homeModules.plasma-manager ]; }
-      {
-        nixpkgs.overlays = [
-          (final: prev: {
-            rust-analyzer = fenix.packages.${commonArgs.system}.stable.rust-analyzer;
-            rust-analyzer-vscode = fenix.packages.${commonArgs.system}.rust-analyzer-vscode-extension;
-            vscode-extensions = vscode-extensions.extensions.${commonArgs.system};
-            # nvim = self.packages.${pkgs.stdenv.system}.neovim;
-            qass = qass.packages.${commonArgs.system}.default;
-            shader-language-server = shader-language-server.packages.${commonArgs.system}.default;
-          })
-        ];
-      }
-      # TODO: move this away
     ];
   };
 }
