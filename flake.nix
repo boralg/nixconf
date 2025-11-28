@@ -21,6 +21,8 @@
       inputs.home-manager.follows = "home-manager";
     };
 
+    impermanence.url = "github:nix-community/impermanence";
+
     fenix = {
       url = "github:nix-community/fenix";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -54,6 +56,7 @@
       lix-module,
       home-manager,
       plasma-manager,
+      impermanence,
       fenix,
       vscode-extensions,
       nvf,

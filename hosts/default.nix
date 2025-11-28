@@ -5,6 +5,7 @@ inputs@{
   lix-module,
   home-manager,
   plasma-manager,
+  impermanence,
   fenix,
   vscode-extensions,
   nvf,
@@ -78,6 +79,7 @@ in
     };
     modules = commonModules ++ [
       ./dark/configuration.nix
+      impermanence.nixosModules.impermanence
     ];
   };
 }
