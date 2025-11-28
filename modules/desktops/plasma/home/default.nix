@@ -6,6 +6,9 @@
   # TODO: revise spectacle shortcuts + qass
   programs.plasma = {
     enable = true;
+
+    workspace.colorScheme = "BreezeDark";
+
     shortcuts = {
       "services/org.kde.krunner.desktop"."_launch" = [
         "Alt+F2"
