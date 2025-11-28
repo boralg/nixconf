@@ -5,6 +5,7 @@
 
   imports = [
     ../../../modules/desktops/plasma/home
+    ../../../modules/desktops/plasma/home/asus-mouse.nix
     ../../../modules/programs/zsh/home.nix
     ../../../modules/programs/vscode/home.nix
   ];

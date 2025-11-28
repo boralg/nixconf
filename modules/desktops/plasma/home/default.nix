@@ -38,19 +38,6 @@
       "dolphinrc"."PreviewSettings"."Plugins" =
         "appimagethumbnail,audiothumbnail,blenderthumbnail,comicbookthumbnail,cursorthumbnail,djvuthumbnail,ebookthumbnail,exrthumbnail,directorythumbnail,fontthumbnail,imagethumbnail,jpegthumbnail,kraorathumbnail,windowsexethumbnail,windowsimagethumbnail,mltpreview,mobithumbnail,opendocumentthumbnail,aseprite,gsthumbnail,rawthumbnail,svgthumbnail,ffmpegthumbs";
 
-      "kcminputrc"."Libinput/0/14373/ USB OPTICAL MOUSE"."PointerAcceleration" = "-0.200";
-      "kcminputrc"."Libinput/0/14373/ USB OPTICAL MOUSE"."PointerAccelerationProfile" = 1;
-      "kcminputrc"."Libinput/1241/63015/USB Gaming Mouse"."PointerAcceleration" = 0.000;
-      "kcminputrc"."Libinput/1241/63015/USB Gaming Mouse"."PointerAccelerationProfile" = 1;
-      "kcminputrc"."Libinput/1267/12521/ELAN1205:00 04F3:30E9 Touchpad"."DisableWhileTyping" = true;
-      "kcminputrc"."Libinput/1267/12521/ELAN1205:00 04F3:30E9 Touchpad"."Enabled" = true;
-      "kcminputrc"."Libinput/1267/12521/ELAN1205:00 04F3:30E9 Touchpad"."NaturalScroll" = true;
-      "kcminputrc"."Libinput/1267/12521/ELAN1205:00 04F3:30E9 Touchpad"."PointerAcceleration" = 0.000;
-      "kcminputrc"."Libinput/1267/12521/ELAN1205:00 04F3:30E9 Touchpad"."PointerAccelerationProfile" = 1;
-      "kcminputrc"."Libinput/1267/12521/ELAN1205:00 04F3:30E9 Touchpad"."ScrollMethod" = 1;
-      "kcminputrc"."Mouse"."X11LibInputXAccelProfileFlat" = true;
-      "kcminputrc"."Mouse"."XLbInptPointerAcceleration" = "-0.2";
-
       "kdeglobals"."General"."BrowserApplication" = "librewolf.desktop";
       "kdeglobals"."KFileDialog Settings"."Allow Expansion" = false;
       "kdeglobals"."KFileDialog Settings"."Automatically select filename extension" = true;
