@@ -17,8 +17,26 @@
       plugins = [
         "git"
       ];
-      theme = "robbyrussell"; # TODO: powerlevel10k
     };
+
+    plugins = [
+      {
+        name = "powerlevel10k";
+        src = pkgs.zsh-powerlevel10k;
+        file = "share/zsh-powerlevel10k/powerlevel10k.zsh-theme";
+      }
+      {
+        name = "powerlevel10k-config";
+        src = ./p10k.zsh;
+        file = "p10k.zsh";
+      }
+    ];
+
+    initContent = ''
+      [[ ! -f ${./p10k.zsh} ]] || source ${./p10k.zsh}
+
+      setopt AUTO_PUSHD
+    '';
 
     history.size = 10000;
 
