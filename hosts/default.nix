@@ -71,4 +71,13 @@ in
       ./onix/configuration.nix
     ];
   };
+  dark = nixpkgs.lib.nixosSystem {
+    inherit pkgs;
+    specialArgs = {
+      inherit inputs;
+    };
+    modules = commonModules ++ [
+      ./dark/configuration.nix
+    ];
+  };
 }
