@@ -5,11 +5,6 @@
     nixpkgs.url = "nixpkgs/nixos-25.11";
     nixpkgs-unstable.url = "nixpkgs/nixos-unstable";
 
-    lix-module = {
-      url = "https://git.lix.systems/lix-project/nixos-module/archive/2.92.0-3.tar.gz";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     home-manager = {
       url = "github:nix-community/home-manager/release-25.11";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -39,12 +34,10 @@
 
     shader-language-server = {
       url = "github:boralg/shader-sense";
-      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     qass = {
       url = "github:boralg/qass";
-      inputs.nixpkgs.follows = "nixpkgs"; # TODO: fix dupes in lock
     };
   };
 
@@ -53,7 +46,6 @@
       self,
       nixpkgs,
       nixpkgs-unstable,
-      lix-module,
       home-manager,
       plasma-manager,
       impermanence,

@@ -2,7 +2,6 @@ inputs@{
   self,
   nixpkgs,
   nixpkgs-unstable,
-  lix-module,
   home-manager,
   plasma-manager,
   impermanence,
@@ -37,7 +36,6 @@ let
   };
 
   commonModules = [
-    lix-module.nixosModules.default
     ./configuration.nix
     {
       nixpkgs.overlays = [
