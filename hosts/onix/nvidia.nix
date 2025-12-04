@@ -10,7 +10,7 @@
       powerManagement.finegrained = false;
 
       modesetting.enable = true;
-      open = false;
+      open = true;
       nvidiaSettings = true;
 
       prime = {
