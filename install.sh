@@ -64,6 +64,7 @@ if [ "$DO_ENCRYPT" = "1" ]; then
     LUKS_UUID=$(sudo blkid -s UUID -o value ${FORMAT_PART}p2)
     HWCONFIG="/mnt/home/$USERNAME/nixconf/hosts/$HOSTNAME/hardware-configuration.nix"
 
+    # god help you if hardware-configuration format changes
     sudo sed -i 's/boot.initrd.kernelModules = \[ \];/boot.initrd.kernelModules = [ "cryptd" ];/' "$HWCONFIG"
 
     LUKS_LINE='  boot.initrd.luks.devices."cryptroot".device = "/dev/disk/by-uuid/'$LUKS_UUID'";'
