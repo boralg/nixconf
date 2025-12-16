@@ -56,6 +56,6 @@ in
       obs-studio
       file
 
-      foliate
+      claude-code
     ]);
 }

@@ -28,6 +28,7 @@ let
           "spotify"
           "obsidian"
           "android-studio-stable"
+          "claude-code"
         ];
       nvidia.acceptLicense = true;
       permittedInsecurePackages = [

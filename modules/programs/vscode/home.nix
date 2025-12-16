@@ -12,9 +12,7 @@
       userSettings = builtins.fromJSON (builtins.readFile ./settings.json) // {
         "rust-analyzer.server.path" = "${pkgs.rust-analyzer}/bin/rust-analyzer";
         "shader-validator.serverPath" = "${pkgs.shader-language-server}/bin/shader-language-server";
-        # "glsld.binaryPath" = "${pkgs.glsld}/bin/glsld";
-        # "glsl-analyzer.path" = "${pkgs.glsl_analyzer}/bin/glsl_analyzer";
-        # "glsllint.glslangValidatorPath" = "${pkgs.glslang}/bin/glslangValidator";
+        "claudeCode.claudeProcessWrapper" = "${pkgs.claude-code}/bin/claude";
       };
 
       extensions = (
@@ -29,21 +27,12 @@
           mtxr.sqltools
           bradlc.vscode-tailwindcss
 
-          # nolanderc.glsl-analyzer
-
-          # kuba-p.glsl-lsp
-
-          # dtoplak.vscode-glsllint
-          # slevesque.shader
-
-          # jsdf.glsl-lsp-jsdf
-
-          # daiyousei-qz.glsld-vscode
-
           antaalt.shader-validator
 
           mkhl.direnv
           editorconfig.editorconfig
+
+          (anthropic.claude-code.override { meta.license = [ ]; })
         ]
       );
     };
