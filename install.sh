@@ -6,14 +6,17 @@ HOSTNAME="dark"
 
 set -e
 
-echo "network={
+
+if [ -n "$WIFI_SSID" ]; then
+    echo "network={
     ssid=\"$WIFI_SSID\"
     psk=\"$WIFI_PWD\"
 }" | sudo tee /etc/wpa_supplicant.conf
 
-sudo ip link set wlp0s20f3 up
-sudo wpa_supplicant -B -i wlp0s20f3 -c /etc/wpa_supplicant.conf
-sudo dhcpcd wlp0s20f3
+    sudo ip link set wlp0s20f3 up
+    sudo wpa_supplicant -B -i wlp0s20f3 -c /etc/wpa_supplicant.conf
+    sudo dhcpcd wlp0s20f3
+fi
 
 
 git clone https://github.com/boralg/nixconf.git
