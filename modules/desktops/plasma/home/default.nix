@@ -10,18 +10,20 @@
     workspace.colorScheme = "BreezeDark";
 
     shortcuts = {
-      "services/org.kde.krunner.desktop"."_launch" = [
+      "services/org.kde.krunner.desktop"._launch = [
         "Alt+F2"
         "Alt+Space"
         "Search"
       ];
 
-      "services/org.kde.spectacle.desktop"."ActiveWindowScreenShot" = "Ctrl+Print";
-      "services/org.kde.spectacle.desktop"."CurrentMonitorScreenShot" = "Print";
-      "services/org.kde.spectacle.desktop"."FullScreenScreenShot" = "Meta+Print";
-      "services/org.kde.spectacle.desktop"."RecordWindow" = [ ];
-      "services/org.kde.spectacle.desktop"."RectangularRegionScreenShot" = "Meta+Shift+S";
-      "services/org.kde.spectacle.desktop"."_launch" = [ ];
+      "services/net.local.qass.desktop"._launch = "Ctrl+Alt+Q";
+
+      "services/org.kde.spectacle.desktop".ActiveWindowScreenShot = "Ctrl+Print";
+      "services/org.kde.spectacle.desktop".CurrentMonitorScreenShot = "Print";
+      "services/org.kde.spectacle.desktop".FullScreenScreenShot = "Meta+Print";
+      "services/org.kde.spectacle.desktop".RecordWindow = [ ];
+      "services/org.kde.spectacle.desktop".RectangularRegionScreenShot = "Meta+Shift+S";
+      "services/org.kde.spectacle.desktop"._launch = [ ];
     };
     configFile = {
       "baloofilerc"."General"."dbVersion" = 2;
