@@ -36,6 +36,11 @@
       url = "github:boralg/shader-sense";
     };
 
+    claude-desktop = {
+      url = "github:k3d3/claude-desktop-linux-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     qass = {
       url = "github:boralg/qass";
     };
@@ -53,6 +58,7 @@
       vscode-extensions,
       nvf,
       shader-language-server,
+      claude-desktop,
       qass,
       ...
     }:

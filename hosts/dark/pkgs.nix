@@ -46,5 +46,8 @@ in
       wl-clipboard
       webcord
       obs-studio
+
+      claude-code
+      claude-desktop
     ]);
 }

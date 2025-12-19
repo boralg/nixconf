@@ -57,5 +57,6 @@ in
       file
 
       claude-code
+      claude-desktop
     ]);
 }

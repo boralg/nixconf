@@ -9,6 +9,7 @@ inputs@{
   vscode-extensions,
   nvf,
   shader-language-server,
+  claude-desktop,
   qass,
   ...
 }:
@@ -56,6 +57,7 @@ let
           # nvim = self.packages.${pkgs.stdenv.system}.neovim;
           qass = qass.packages.${commonArgs.system}.default;
           shader-language-server = shader-language-server.packages.${commonArgs.system}.default;
+          claude-desktop = claude-desktop.packages.${commonArgs.system}.default;
         })
       ];
     }
