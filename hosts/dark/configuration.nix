@@ -3,6 +3,7 @@
     ./hardware-configuration.nix
     ../../modules/programs/zsh
     ../../modules/desktops/plasma
+    ../../modules/services/fingerprint.nix
     ./pkgs.nix
   ];
 
