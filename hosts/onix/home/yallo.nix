@@ -16,7 +16,7 @@
     enable = true;
 
     settings.user = {
-      name = "thinnerthinker";
+      name = "boralg";
       email = "thinnrthinkr@gmail.com";
     };
   };
