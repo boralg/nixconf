@@ -4,6 +4,7 @@
     ../../modules/programs/zsh
     ../../modules/desktops/plasma
     ../../modules/services/fingerprint.nix
+    ../../modules/services/homeboard.nix
     ./pkgs.nix
   ];
 

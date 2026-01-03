@@ -19,6 +19,7 @@ in
       wget
 
       qass
+      homeboard
 
       librewolf
       chromium

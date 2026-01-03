@@ -35,6 +35,7 @@
   networking.networkmanager.enable = true;
   networking.firewall.allowedTCPPorts = [
     3000
+    4663 # homeboard
     8000
     8080
   ];

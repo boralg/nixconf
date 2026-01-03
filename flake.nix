@@ -44,6 +44,10 @@
     qass = {
       url = "github:boralg/qass";
     };
+
+    homeboard = {
+      url = "github:boralg/homeboard";
+    };
   };
 
   outputs =
@@ -60,6 +64,7 @@
       shader-language-server,
       claude-desktop,
       qass,
+      homeboard,
       ...
     }:
     {

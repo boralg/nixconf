@@ -11,6 +11,7 @@ inputs@{
   shader-language-server,
   claude-desktop,
   qass,
+  homeboard,
   ...
 }:
 let
@@ -56,6 +57,7 @@ let
           vscode-extensions = vscode-extensions.extensions.${commonArgs.system};
           # nvim = self.packages.${pkgs.stdenv.system}.neovim;
           qass = qass.packages.${commonArgs.system}.default;
+          homeboard = homeboard.packages.${commonArgs.system}.default;
           shader-language-server = shader-language-server.packages.${commonArgs.system}.default;
           claude-desktop = claude-desktop.packages.${commonArgs.system}.default;
         })
